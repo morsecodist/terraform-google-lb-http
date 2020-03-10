@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0](https://www.github.com/terraform-google-modules/terraform-google-lb-http/compare/v3.2.0...v4.0.0) (2020-03-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* You must now specify log_config for each backend service. Use `log_config = null` to use the default.
+
+### Features
+
+* Add support for log_config in google_compute_backend_service. ([#88](https://www.github.com/terraform-google-modules/terraform-google-lb-http/issues/88)) ([f5129ef](https://www.github.com/terraform-google-modules/terraform-google-lb-http/commit/f5129ef91fdcf1ed19200ee6542f251cc701ab67))
+* Add support for target_service_accounts in default firewall rule. ([#87](https://www.github.com/terraform-google-modules/terraform-google-lb-http/issues/87)) ([0ea26a2](https://www.github.com/terraform-google-modules/terraform-google-lb-http/commit/0ea26a2391d89cb906d91918c03a278eb9ed653a))
+
 ## [3.2.0](https://www.github.com/terraform-google-modules/terraform-google-lb-http/compare/v3.1.0...v3.2.0) (2020-02-13)
 
 
