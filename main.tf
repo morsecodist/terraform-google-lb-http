@@ -104,9 +104,11 @@ resource "google_compute_backend_service" "default" {
   dynamic "iap" {
     for_each = lookup(each.value, "iap", false) ? toset(["iap"]) : {}
 
-    oauth2_client_id            = lookup(lookup(each.value, "iap", {}), "oauth2_client_id", null)
-    oauth2_client_secret        = lookup(lookup(each.value, "iap", {}), "oauth2_client_secret", null)
-    oauth2_client_secret_sha256 = lookup(lookup(each.value, "iap", {}), "oauth2_client_secret_sha256", null)
+    content {
+      oauth2_client_id            = lookup(lookup(each.value, "iap", {}), "oauth2_client_id", null)
+      oauth2_client_secret        = lookup(lookup(each.value, "iap", {}), "oauth2_client_secret", null)
+      oauth2_client_secret_sha256 = lookup(lookup(each.value, "iap", {}), "oauth2_client_secret_sha256", null)
+    }
   }
 
   dynamic "backend" {
