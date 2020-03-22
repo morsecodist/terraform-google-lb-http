@@ -102,7 +102,7 @@ resource "google_compute_backend_service" "default" {
   health_checks                   = [google_compute_health_check.default[each.key].self_link]
 
   dynamic "iap" {
-    for_each = lookup(each.value, "iap", false) ? toset(["iap"]) : toset([])
+    for_each = lookup(each.value, "iap", null) == null ? toset(["iap"]) : toset([])
 
     content {
       oauth2_client_id            = lookup(lookup(each.value, "iap", {}), "oauth2_client_id", null)

@@ -85,6 +85,11 @@ variable "backends" {
       port                = number
       host                = string
     })
+    iap = object({
+      oauth2_client_id            = string
+      oauth2_client_secret        = string
+      oauth2_client_secret_sha256 = string
+    })
     log_config = object({
       enable      = bool
       sample_rate = number
